@@ -7,6 +7,7 @@ import FishScreen from "../screens/FishScreen";
 import BugsScreen from "../screens/BugsScreen";
 import FossilsScreen from "../screens/FossilsScreen";
 import SeaScreen from "../screens/SeaScreen";
+import DetailCardFish from "../components/fish/DetailCardFish";
 
 
 type Props = {};
@@ -21,6 +22,7 @@ const Navigators = (props: Props) => {
           <Stack.Screen name={AppRoute.BUGS_SCREEN} component={BugsScreen} />
           <Stack.Screen name={AppRoute.FOSSILS_SCREEN} component={FossilsScreen} />
           <Stack.Screen name={AppRoute.SEA_SCREEN} component={SeaScreen} />
+          <Stack.Screen name={AppRoute.DETAILFISH_SCREEN} component={DetailCardFish} />
         </Stack.Navigator>
       </NavigationContainer>
   );

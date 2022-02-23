@@ -1,7 +1,10 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, StyleSheet, SafeAreaView } from 'react-native'
 import React from 'react'
 import { useFish } from '../hooks/useFish';
-import CardFish from '../components/Fish/CardFish';
+import CardFish from '../components/fish/CardFish';
+import { Colors, Searchbar } from 'react-native-paper';
+import ResearchBar from '../components/ResearchBar';
+
 
 type Props = {}
 
@@ -14,20 +17,43 @@ const FishScreen = (props: Props) => {
     return <Text>Something bad happened…</Text>;
   }
 
-  const renderItem = (props: any) => <CardFish {...props} />;
+  const renderItem = (props: any) => <CardFish {...props}/>;
   
 
   return (
-    <>
+  
+    <SafeAreaView style={styles.container}>
+      <ResearchBar/>
       {data && (
         <FlatList
           data={data}
           renderItem={renderItem}
-          keyExtractor={(item) => item.id}
+          keyExtractor={item => item.id}
         />
       )}
-    </>
+    </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "black",
+    color: "white",
+    borderColor: "#8C867C",
+    borderStyle: "solid",
+    borderWidth: 3,
+    padding: 4,
+    margin: 10,
+  },
+
+  text: {
+    fontSize: 20,
+    textAlign: "center",
+  },
+  container: {
+    flex : 1,
+    backgroundColor: Colors.grey300,
+  },
+});
 
 export default FishScreen
