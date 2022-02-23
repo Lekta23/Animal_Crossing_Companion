@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import Navigators from './src/navigate/Navigators';
 
+
+const queryClient = new QueryClient();
 export default function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <SafeAreaView style={styles.container}>
-      <HomeScreen/>
+      <Navigators/>
     </SafeAreaView>
+    </QueryClientProvider>
   );
 }
 
