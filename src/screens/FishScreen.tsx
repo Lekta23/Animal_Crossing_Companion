@@ -1,12 +1,18 @@
-import { View, Text, FlatList, StyleSheet, SafeAreaView } from 'react-native'
-import React from 'react'
-import { useFish } from '../hooks/useFish';
-import CardFish from '../components/fish/CardFish';
-import { Colors, Searchbar } from 'react-native-paper';
-import ResearchBar from '../components/ResearchBar';
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  SafeAreaView,
+  TextInput,
+} from "react-native";
+import React from "react";
+import { useFish } from "../hooks/useFish";
+import CardFish from "../components/fish/CardFish";
+import { Colors } from "react-native-paper";
+import SearchBar from "../components/searchBar";
 
-
-type Props = {}
+type Props = {};
 
 const FishScreen = (props: Props) => {
   const { isLoading, isError, data } = useFish();
@@ -17,23 +23,21 @@ const FishScreen = (props: Props) => {
     return <Text>Something bad happened…</Text>;
   }
 
-  const renderItem = (props: any) => <CardFish {...props}/>;
-  
+  const renderItem = (props: any) => <CardFish {...props} />;
 
   return (
-  
     <SafeAreaView style={styles.container}>
-      <ResearchBar/>
+      <SearchBar />
       {data && (
         <FlatList
           data={data}
           renderItem={renderItem}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
         />
       )}
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   button: {
@@ -51,9 +55,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   container: {
-    flex : 1,
+    flex: 1,
     backgroundColor: Colors.grey300,
   },
 });
 
-export default FishScreen
+export default FishScreen;
