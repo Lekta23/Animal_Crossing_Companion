@@ -5,3 +5,6 @@ Applications react native which allows to see the items of the game Animal Cross
 # Start 
 npm i 
 npm start
+
+# Expo 
+https://expo.dev/@lekta/Animal_Crossing_Companion
