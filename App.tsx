@@ -10,15 +10,9 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SafeAreaView style={styles.container}>
+
         <Navigators />
-      </SafeAreaView>
     </QueryClientProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#fff",
-  },
-});

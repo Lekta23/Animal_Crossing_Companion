@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import React from "react";
 import { Button } from "react-native-paper";
 import { AppRoute } from "../navigate/AppRoute";
@@ -7,7 +7,7 @@ type Props = {};
 
 const HomeScreen = (props: Props) => {
   return (
-    <>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Animal Crossing New Horizon</Text>
       <Button
         style={styles.button}
@@ -53,7 +53,7 @@ const HomeScreen = (props: Props) => {
       >
         Océans
       </Button>
-    </>
+    </SafeAreaView>
   );
 };
 
@@ -71,6 +71,10 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     textAlign: "center",
+  },
+  container: {
+    flex : 1,
+    backgroundColor: "#fff",
   },
 });
 
